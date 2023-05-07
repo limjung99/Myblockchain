@@ -36,6 +36,12 @@ class User:
     def return_f_index(self):
         return self.flink
 
+    def return_pk(self):
+        return self.pub_key
+
+    def return_sk(self):
+        return self.sk_key
+
         
 
     

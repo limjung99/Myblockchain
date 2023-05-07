@@ -38,7 +38,7 @@ class Myblockchain: #BlockChain
                             self.fullnodes[index].add_fullnode_index(int(i[-1]))
                             
        
-    def run(self): #run the protocol
+    def run(self): #run the protocol-> issue, tx생성 및 node사이의 ipc 구현 
         # TX발생 및 전파 
         # Block mining 
         # 병렬 processing 
@@ -48,9 +48,10 @@ class Myblockchain: #BlockChain
             #i번째 usernode와 link된 full_node의 index
             index = i.return_f_index()
             pub_key = i.return_pk()
+            private_key = i.return_sk()
             for tx in tx_list:
-                #tx이 유효한지 체크하여 유효하면 이웃에게 전파 
-                self.fullnodes[index].is_validate_TX(tx,pub_key) 
+                #tx이 유효한지 체크하여 유효하면 이웃에게 전파 pk,tx,si
+                self.fullnodes[index].is_validate_TX(pub_key,tx,) 
     def show_block_chain(self,index):
         pass
     def show_tx_pool(self,index):
